@@ -1,0 +1,14 @@
+C:\Users\UsuarioT\RiderProjects\PiedraPapelTijeras\PiedraPapelTijeras\obj\Debug\net8.0\PiedraPapelTijeras.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\UsuarioT\RiderProjects\PiedraPapelTijeras\PiedraPapelTijeras\obj\Debug\net8.0\PiedraPapelTijeras.AssemblyInfoInputs.cache
+C:\Users\UsuarioT\RiderProjects\PiedraPapelTijeras\PiedraPapelTijeras\obj\Debug\net8.0\PiedraPapelTijeras.AssemblyInfo.cs
+C:\Users\UsuarioT\RiderProjects\PiedraPapelTijeras\PiedraPapelTijeras\obj\Debug\net8.0\PiedraPapelTijeras.csproj.CoreCompileInputs.cache
+C:\Users\UsuarioT\RiderProjects\PiedraPapelTijeras\PiedraPapelTijeras\bin\Debug\net8.0\PiedraPapelTijeras.exe
+C:\Users\UsuarioT\RiderProjects\PiedraPapelTijeras\PiedraPapelTijeras\bin\Debug\net8.0\PiedraPapelTijeras.deps.json
+C:\Users\UsuarioT\RiderProjects\PiedraPapelTijeras\PiedraPapelTijeras\bin\Debug\net8.0\PiedraPapelTijeras.runtimeconfig.json
+C:\Users\UsuarioT\RiderProjects\PiedraPapelTijeras\PiedraPapelTijeras\bin\Debug\net8.0\PiedraPapelTijeras.dll
+C:\Users\UsuarioT\RiderProjects\PiedraPapelTijeras\PiedraPapelTijeras\bin\Debug\net8.0\PiedraPapelTijeras.pdb
+C:\Users\UsuarioT\RiderProjects\PiedraPapelTijeras\PiedraPapelTijeras\obj\Debug\net8.0\PiedraPapelTijeras.dll
+C:\Users\UsuarioT\RiderProjects\PiedraPapelTijeras\PiedraPapelTijeras\obj\Debug\net8.0\refint\PiedraPapelTijeras.dll
+C:\Users\UsuarioT\RiderProjects\PiedraPapelTijeras\PiedraPapelTijeras\obj\Debug\net8.0\PiedraPapelTijeras.pdb
+C:\Users\UsuarioT\RiderProjects\PiedraPapelTijeras\PiedraPapelTijeras\obj\Debug\net8.0\PiedraPapelTijeras.genruntimeconfig.cache
+C:\Users\UsuarioT\RiderProjects\PiedraPapelTijeras\PiedraPapelTijeras\obj\Debug\net8.0\ref\PiedraPapelTijeras.dll
