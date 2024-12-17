@@ -5,77 +5,116 @@ namespace PiedraPapelTijeras;
 class PiedraPapelTijeras
 {
     
-    static int v1 = 0;
-    static int v2 = 0;
+    static int _v1 = 0;
+    static int _v2 = 0;
 
-    static string texto1 = "";
-    static string texto2 = "";
+    static List<string> _texto1 = new List<string>();
+    static List<string> _texto2 = new List<string>();
     
     
-    static void Main() 
+    static List<int> _ganadores = new List<int>();
+
+    
+    static void Main()
     {
-        for (var i = 0; i < 3; i++)
+        List<Thread?> threads = new List<Thread?>();
+
+        for (int i = 0; i < 8; i++)
         {
             var t1 = new Thread(new ThreadStart (Go));
             var t2 = new Thread(new ThreadStart (Go2));
-            Console.WriteLine($"Ronda {i + 1}");
-            t1.Start();
-            t2.Start();
-            t2.Join();
-            CheckVictory();
+            threads.Add(t1);
+            threads.Add(t2);
         }
         
-        if (v1 > v2) Console.WriteLine("Este juego lo ha ganado el hilo 1");
-        else if (v1 < v2) Console.WriteLine("Este juego lo ha ganado el hilo 2");
-        else Console.WriteLine("Este juego ha quedado en empate");
+        for (int j = 0; j < 16; j+=2)
+        {
+            Console.WriteLine("Partida");
+            threads[j].Start();
+            threads[j + 1].Start();
+            int i = 0;
+            bool ganador = false;
+            while (!ganador)
+            {
+                Console.WriteLine($"Ronda {i + 1}");
+                CheckVictory(_texto1[i], _texto2[i], j + 1 , j +2);
+                i++;
+                if (_v1 >= 2 || _v2 >= 2)
+                {
+                    ganador = true;
+                }
+            }
+
+            if (_v1 > _v2)
+            {
+                Console.WriteLine("Este juego lo ha ganado el hilo 1");
+                _ganadores.Add(j + 1);
+            }
+            else if (_v1 < _v2)
+            {
+                Console.WriteLine("Este juego lo ha ganado el hilo 2");
+                _ganadores.Add(j +2);
+            }
+            else Console.WriteLine("Este juego ha quedado en empate");
+            
+            _v2 = 0;
+            _v1 = 0;
+        }
+        
+        Console.WriteLine(_ganadores.Count);
+     
     }
 
     static void Go()
     {
+        _texto1.RemoveAll(_texto1.Contains);
         var random = new Random();
         List<string> list = ["Piedra", "Papel", "Tijeras"];
-        var text = list[random.Next(0, 3)];
-        texto1 = text;
-        Console.WriteLine ($"Hilo 1: {text}");
-        Thread.Sleep(500);
+        for (int i = 0; i < 18; i++)
+        {
+            _texto1.Add(list[random.Next(0, 3)]);
+        }
     }
 
     static void Go2()
     {
+        _texto2.RemoveAll(_texto2.Contains);
         var random = new Random();
         List<string> list = ["Piedra", "Papel", "Tijeras"];
-        var text = list[random.Next(0, 3)];
-        texto2 = text;
-        Console.WriteLine ($"Hilo 2: {text}");
-        Thread.Sleep(600);
+        for (int i = 0; i < 18; i++)
+        {
+            _texto2.Add(list[random.Next(0, 3)]);
+        }
     }
 
-    static void CheckVictory()
+    static void CheckVictory(String text1, String text2, int hilo1, int hilo2)
     {
-        if (texto1 == "Tijeras" && texto2 == "Papel")
+        Console.WriteLine($"Hilo {hilo1}: {text1}");
+        Console.WriteLine($"Hilo {hilo2}: {text2}");
+        if (text1 == "Tijeras" && text2 == "Papel")
         {
-            v1++;
-            Console.WriteLine ("Ha ganado el hilo 1");
-        } else if (texto2 == "Tijeras" && texto1 == "Papel")
+            _v1++;
+            Console.WriteLine ($"Ha ganado el hilo {hilo1}");
+        } else if (text2 == "Tijeras" && text1 == "Papel")
         {
-            v2++;
-            Console.WriteLine ("Ha ganado el hilo 2");
-        } else if (texto2 == "Piedra" && texto1 == "Tijeras")
+            _v2++;
+            Console.WriteLine ($"Ha ganado el hilo {hilo2}");
+        } else if (text2 == "Piedra" && text1 == "Tijeras")
         {
-            v2++;
-            Console.WriteLine ("Ha ganado el hilo 2");
-        } else if (texto1 == "Piedra" && texto2 == "Tijeras")
+            _v2++;
+            Console.WriteLine ($"Ha ganado el hilo {hilo2}");
+        } else if (text1 == "Piedra" && text2 == "Tijeras")
         {
-            v1++;
-            Console.WriteLine ("Ha ganado el hilo 1");
-        } else if (texto1 == "Papel" && texto2 == "Piedra")
+            _v1++;
+            Console.WriteLine ($"Ha ganado el {hilo1}");
+        } else if (text1 == "Papel" && text2 == "Piedra")
         {
-            v1++;
-            Console.WriteLine ("Ha ganado el hilo 1");
-        } else if (texto1 == "Piedra" && texto2 == "Papel")
+            _v1++;
+            Console.WriteLine ($"Ha ganado el {hilo1}");
+        } else if (text1 == "Piedra" && text2 == "Papel")
         {
-            v2++;
-            Console.WriteLine ("Ha ganado el hilo 2");
+            _v2++;
+            Console.WriteLine ($"Ha ganado el {hilo2}");
         }
         else
         {

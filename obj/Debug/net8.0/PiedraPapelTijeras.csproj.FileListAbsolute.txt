@@ -27,3 +27,4 @@ C:\Users\ivan\RiderProjects\PiedraPapelTijeras\obj\Debug\net8.0\refint\PiedraPap
 C:\Users\ivan\RiderProjects\PiedraPapelTijeras\obj\Debug\net8.0\PiedraPapelTijeras.pdb
 C:\Users\ivan\RiderProjects\PiedraPapelTijeras\obj\Debug\net8.0\PiedraPapelTijeras.genruntimeconfig.cache
 C:\Users\ivan\RiderProjects\PiedraPapelTijeras\obj\Debug\net8.0\ref\PiedraPapelTijeras.dll
+C:\Users\UsuarioT\RiderProjects\PiedraPapelTijeras\PiedraPapelTijeras\obj\Debug\net8.0\PiedraPapelTijeras.sourcelink.json
